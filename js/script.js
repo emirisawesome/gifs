@@ -24,18 +24,30 @@ searchButton.className = 'searchButton'
 searchButton.id = 'searchButton'
 searchButton.innerHTML = 'Search'
 
+let addLimit = document.createElement('select')
+addLimit.className = 'addLimit'
+
+for (let i = 10; i < 50; i += 10) {
+    let addLimitParm = document.createElement('option')
+    addLimitParm.innerHTML = i
+    addLimitParm.value = i
+    addLimit.append(addLimitParm)
+}
+
 let res = document.createElement('div')
 res.id = 'res'
 
 
 searchContainer.prepend(searchInput)
+searchContainer.prepend(addLimit)
+
 searchContainer.prepend(searchButton)
 main.append(res)
 
 
 let search = async () => {
     res.innerHTML = ''
-    let request = await fetch(`${api}${key}&q=${searchInput.value}&limit=${limit}`)
+    let request = await fetch(`${api}${key}&q=${searchInput.value}&limit=${addLimit.value}`)
     let response = await request.json()
     console.log(response);
 

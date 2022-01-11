@@ -127,4 +127,20 @@ body {
       color: #c0c0aa;
       font-size: 21px;
       text-align: center;
+
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+}
+
+.gifCart:hover .gifTitle{
+      white-space: normal;
+      overflow: hidden;
+      text-overflow: ellipsis;
+}
+
+.addLimit{
+    background-color: #3b3c3e;
+      color: #c0c0aa;
+
 }
