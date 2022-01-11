@@ -80,3 +80,9 @@ let search = async () => {
 searchButton.addEventListener('click', search)
 
 
+searchInput.addEventListener('keypress', (e) => {
+
+    if (e.which === 13) {
+        search()
+    }
+});
